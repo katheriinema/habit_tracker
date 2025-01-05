@@ -1,109 +1,226 @@
 /* General Reset */
 body {
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-    width: 100vw; /* 100% of the viewport width */
-    height: 100vh; /* 100% of the viewport height */
-    background: url('assets/backgrounds/living-room.png') no-repeat center center;
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    overflow: hidden; /* Prevent scrollbars if content spills out */
-  }      
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+  background: url('assets/backgrounds/living-room.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  overflow: hidden; /* Prevent scrollbars if content spills out */
+}      
 
 /* Media query for very tall or narrow screens */
 @media screen and (max-aspect-ratio: 3/4) {
-    body {
-        background-size: auto 100%; /* Fit vertically for tall/narrow screens */
-    }
+  body {
+  background-size: auto 100%; /* Fit vertically for tall/narrow screens */
+  }
 }
-  
+
 /* Media query for very wide screens */
 @media screen and (min-aspect-ratio: 16/9) {
-    body {
-      background-size: 100% auto; /* Fit horizontally for wide screens */
-    }
+  body {
+  background-size: 100% auto; /* Fit horizontally for wide screens */
+  }
 }
-  
-  /* Chatbox */
-  #chatbox {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 400px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+/* Chatbox */
+
+/* Chatbox Slide-in Animation */
+@keyframes slideIn {
+  0% {
+  transform: translateX(-100%); /* Start off-screen */
+  opacity: 1;
   }
-  
-  #chatbox button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ffcccb;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  100% {
+  transform: translateX(0); /* End in its final position */
+  opacity: 1;
   }
-  
-  #chatbox button:hover {
-    background-color: #ff9999;
+}
+
+/* Chatbox Pulse Animation */
+@keyframes pulse {
+  0% {
+  box-shadow: 0 0 10px rgba(255, 204, 102, 0.8); /* Warm yellow */
   }
-  
+  50% {
+  box-shadow: 0 0 20px rgba(255, 153, 51, 1); /* Warm orange */
+  }
+  100% {
+  box-shadow: 0 0 10px rgba(255, 204, 102, 0.8); /* Warm yellow */
+  }
+}
+
+#chatbox {
+  animation: slideIn 2s ease-out; /* Start with slide-in animation */
+  position: absolute;
+  bottom: 55px;
+  left: 60px;
+  width: 1000px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  font-family: 'Indie Flower', cursive; /* Custom font */
+  font-size: 20px;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+#chatbox button {
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #eb8f3e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#chatbox button:hover {
+  background-color: #c36e28;
+}
+
   /* Pet Selection */
-  #pet-selection {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .pet-option {
-    width: 100px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .pet-option:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Task List and Pet */
-  #task-and-pet {
-    position: relative; /* Sets a positioning context */
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  #task-container {
-    position: absolute; /* Allow precise positioning */
-    width: 20%;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #task-list {
-    max-height: 300px;
-    overflow-y: auto;
-    list-style: none;
-    padding: 0;
-  }
-  
-  #task-list li {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  #pet-display {
-    position: absolute; /* Allow precise positioning */
-    bottom: 50px; /* Center vertically */
-    right: 30px; /* Keep it close to the right side */
-    width: auto; /* Allow width to scale with image size */
-    text-align: center;
-  }
-  
-  #pet-display img {
-    width: 250px; /* Larger size for the pet image */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
+#pet-selection {
+  position: absolute; /* Allow precise placement */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for true centering */
+  display: flex; /* Flexbox for content alignment */
+  justify-content: space-evenly; /* Distribute pets evenly with space */
+  align-items: center; /* Center vertically within the box */
+  gap: 10px; /* Add space between pet options */
+  text-align: center;
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+  width: 800px; /* Increase width to fit all pets */
+  height: 300px; /* Adjust height */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  padding: 20px; /* Add padding inside the box */
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+
+.pet-option {
+  width: 250px; /* Adjust pet size */
+  cursor: pointer;
+  transition: transform 0.2s;
+}  
+
+.pet-option:hover {
+  transform: scale(1.5);
+}
+
+/* Task List and Pet */
+#task-and-pet {
+  position: relative; /* Sets a positioning context */
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Task Container */
+#task-container {
+  position: absolute;
+  top: 100px; /* 50px from the top edge */
+  left: 70px; /* 30px from the left edge */
+  width: 450px; /* Adjust width as needed */
+  height: 600px; /* Add a height for clarity */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Allow scrolling if tasks exceed height */
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+}
+
+/* Input Field (Add a Task...) */
+#task-input {
+  width: 80%; /* Full width of the container */
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+  font-size: 16px; /* Adjust font size */
+  border: 2px solid #ddd; /* Border around input */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Add Button */
+#add-task-btn {
+  display: inline-block;
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+  font-size: 16px; /* Adjust font size */
+  padding: 10px 20px;
+  background-color: #eb8f3e; /* Warm orange */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-task-btn:hover {
+  background-color: #c36e28; /* Darker orange on hover */
+}
+
+/* Task List Items */
+#task-list li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+  font-size: 18px; /* Adjust font size */
+}
+
+.completed {
+  text-decoration: line-through; /* Add strikethrough */
+  color: grey; /* Change text color to grey */
+}
+
+
+#pet-display {
+  position: absolute;
+  top: 550px; /* 50px from the top edge */
+  left: 1000px; /* 30px from the left edge */
+}
+
+#pet-display img {
+  width: 350px; /* Size of the pet image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#progress-bar-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px; /* Adjust the width of the progress bar container */
+  height: 30px; /* Adjust the height */
+  background: #e0e0e0; /* Light grey background for the bar */
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  overflow: hidden; /* Clip overflowing content */
+  display: flex; /* Flexbox to center the bar and text */
+  align-items: center; /* Center vertically */
+}
+
+#progress-bar {
+  width: 0%; /* Initial progress width */
+  height: 100%;
+  background: linear-gradient(90deg, #eb8f3e, #c36e28); /* Gradient progress bar */
+  border-radius: 15px 0 0 15px; /* Rounded edges */
+  display: flex; /* Flexbox to center the text */
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+  position: relative; /* Necessary for absolute children */
+}
+
+#progress-text {
+  position: absolute;
+  width: 100%; /* Full width to ensure centering */
+  text-align: center; /* Center text horizontally */
+  font-size: 16px; /* Slightly larger font size for better visibility */
+  color: #333; /* Darker color for text */
+  z-index: 2; /* Ensure the text is above the progress bar */
+  pointer-events: none; /* Prevent the text from blocking clicks */
+  font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+}

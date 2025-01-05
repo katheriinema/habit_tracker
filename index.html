@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozy Home Pet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background -->
+  <div id="body"></div>
+
+  <!-- Chatbox -->
+  <div id="chatbox">
+    <p id="chat-message">Oh hi there! Welcome to your new home! I’m just here to hand over the keys to you. Cozy, isn’t it?</p>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <!-- Pet Selection -->
+  <div id="pet-selection" style="display: none;">
+    <h2>Which pet did you find in your new home?</h2>
+    <div id="pets">
+      <img src="assets/pets/pet1-1.png" id="pet1" class="pet-option" alt="Pet 1">
+      <img src="assets/pets/pet2-1.png" id="pet2" class="pet-option" alt="Pet 2">
+      <img src="assets/pets/pet3-1.png" id="pet3" class="pet-option" alt="Pet 3">
+    </div>
+  </div>
+
+  <!-- Task List and Pet Display -->
+  <div id="task-and-pet" style="display: none;">
+    <div id="task-container">
+      <ul id="task-list"></ul>
+      <input type="text" id="task-input" placeholder="Add a new task">
+      <button id="add-task-btn">Add</button>
+    </div>
+    <div id="pet-display">
+      <img id="current-pet" src="" alt="Your Pet">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

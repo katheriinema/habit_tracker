@@ -1,0 +1,109 @@
+/* General Reset */
+body {
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    background: url('assets/backgrounds/living-room.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    overflow: hidden; /* Prevent scrollbars if content spills out */
+  }      
+
+/* Media query for very tall or narrow screens */
+@media screen and (max-aspect-ratio: 3/4) {
+    body {
+        background-size: auto 100%; /* Fit vertically for tall/narrow screens */
+    }
+}
+  
+/* Media query for very wide screens */
+@media screen and (min-aspect-ratio: 16/9) {
+    body {
+      background-size: 100% auto; /* Fit horizontally for wide screens */
+    }
+}
+  
+  /* Chatbox */
+  #chatbox {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 400px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #chatbox button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffcccb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #chatbox button:hover {
+    background-color: #ff9999;
+  }
+  
+  /* Pet Selection */
+  #pet-selection {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pet-option {
+    width: 100px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .pet-option:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Task List and Pet */
+  #task-and-pet {
+    position: relative; /* Sets a positioning context */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  #task-container {
+    position: absolute; /* Allow precise positioning */
+    width: 20%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #task-list {
+    max-height: 300px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #task-list li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #pet-display {
+    position: absolute; /* Allow precise positioning */
+    bottom: 50px; /* Center vertically */
+    right: 30px; /* Keep it close to the right side */
+    width: auto; /* Allow width to scale with image size */
+    text-align: center;
+  }
+  
+  #pet-display img {
+    width: 250px; /* Larger size for the pet image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  

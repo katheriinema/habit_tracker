@@ -177,6 +177,29 @@ body {
   color: grey; /* Change text color to grey */
 }
 
+/* Reset Onboarding Button Styles */
+#reset-btn {
+  background-color: #f49ac2; /* A soft pink background */
+  color: #fff;               /* White text */
+  border: none;              /* Remove default border */
+  border-radius: 10px;       /* Rounded corners */
+  padding: 5px 10px;        /* Spacing around the button text */
+  margin-top: 10px;          /* Some space above the button */
+  
+  font-family: 'Indie Flower', cursive; 
+  font-size: 12px;           /* Slightly larger text */
+  font-weight: lighter;         /* Bold for emphasis */
+  
+  cursor: pointer;           /* Pointer cursor on hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, 
+              transform 0.2s ease;          /* Smooth hover transitions */
+}
+
+#reset-btn:hover {
+  background-color: #e8649d; /* Darker pink on hover */
+  transform: scale(1.05);    /* Slight zoom effect */
+}
 
 #pet-display {
   position: absolute;
@@ -223,4 +246,16 @@ body {
   z-index: 2; /* Ensure the text is above the progress bar */
   pointer-events: none; /* Prevent the text from blocking clicks */
   font-family: 'Indie Flower', cursive; /* Apply Indie Flower font */
+}
+
+/* Date/Time Styling */
+#date-time {
+  font-size: 24px;         /* Make the text bigger */
+  font-weight: bold;       /* Bold text */
+  color: #333;             /* Slightly darker color */
+  margin-bottom: 10px;     /* Space below if needed */
+  text-align: center;
+
+  /* If you’re using the Indie Flower font elsewhere, you can match it here: */
+  font-family: 'Indie Flower', cursive;
 }

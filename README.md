@@ -65,9 +65,9 @@ Like those plant apps where your plant grows as you do things, but better. Now y
 
 ### Key Skills  
 - `localStorage` to save tasks and pet preferences across sessions.  
-- Event listeners to track task completion and pet evolution.  
+- JavaScript event listeners to track task completion and pet evolution.  
 - Fixing broken pet images after reloads (surprisingly harder than expected).  
-- CSS animations & styling (because the UI should also be cute).  
+- HTML/CSS animations & styling (because the UI should also be cute).
 
 ### Challenges  
 - Debugging why the pet image wouldn’t persist after refreshing, along with a million other small bugs. Everytime I fixed one thing, another would seem to break.  

@@ -92,6 +92,7 @@ Like those plant apps where your plant grows as you do things, but better. Now y
 ## Want to try it out? (I know you do)
 
 Run locally on your own computer by 
+
 1️⃣ Clone the repository:  
 ```bash
 git clone https://github.com/yourusername/habits.git

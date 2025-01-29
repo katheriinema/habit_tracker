@@ -1,6 +1,6 @@
 # **HabitHound: a habit tracker for dog lovers**
 
-![Main Page Screenshot](assets/screenshots/mainpage.png)  
+![Screenshot 2025-01-29 111000](https://github.com/user-attachments/assets/5544cca4-e982-4f55-adc7-a2e33178008e)
 *The main page of the habit tracker, where your pet grows as you complete tasks.*
 
 ---

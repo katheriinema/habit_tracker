@@ -1,7 +1,7 @@
 # **HabitHound: a habit tracker for dog lovers**
 
 ![Screenshot 2025-01-29 111000](https://github.com/user-attachments/assets/5544cca4-e982-4f55-adc7-a2e33178008e)
-*The main page of the habit tracker, where your pet grows as you complete tasks.*
+*The main page with my amazing art and dog courtesy of the one and only Canva.*
 
 ---
 
@@ -91,17 +91,6 @@ Like those plant apps where your plant grows as you do things, but better. Now y
 
 ## Want to try it out? (I know you do)
 
-Run locally on your own computer by 
+Click here: https://katheriinema.github.io/habits/ 
 
-1️⃣ Clone the repository:  
-```bash
-git clone https://github.com/yourusername/habits.git
-```
-2️⃣ Navigate into the project folder:
-cd habits
-
-3️⃣ Open the website in your browser
-Easiest: Just double-click index.html, and it will open in your default browser.
-Recommended for VS Code Users: Right-click index.html → "Open with Live Server" (requires the Live Server extension).
-
-Enjoy!
+And enjoy!

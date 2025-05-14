@@ -91,6 +91,6 @@ Like those plant apps where your plant grows as you do things, but better. Now y
 
 ## Want to try it out? (I know you do)
 
-Click here: https://katheriinema.github.io/habits/ 
+Click here: [https://katheriinema.github.io/habits/ ](https://katheriinema.github.io/habit_tracker/)
 
 And enjoy!
